@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:orientation="vertical">
+
+	<LinearLayout
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		android:orientation="vertical">
+
+		<Switch
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:focusable="false"
+			android:text="GooseDroid"
+			android:textColor="#8CDFF7"
+			android:textSize="17sp"
+			android:gravity="top|left"
+			android:id="@+id/GooseDroid"/>
+
+		<TextView
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:text="Config:"/>
+
+		<Switch
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:enabled="false"
+			android:text="EnableMods"
+			android:id="@+id/EnableMods"/>
+
+		<Switch
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:text="SilenceSounds"
+			android:id="@+id/SilenceSounds"/>
+
+		<Switch
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:checked="true"
+			android:text="Task_CanAttackMouse"
+			android:id="@+id/TaskCanAttackMouse"/>
+
+		<Switch
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:text="AttackRandomly"
+			android:id="@+id/AttackRandomly"/>
+
+		<Switch
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:text="UseCustomColors"
+			android:id="@+id/UseCustomColors"/>
+
+		<TextView
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:text="GooseDefaultWhite:"/>
+
+		<EditText
+			android:layout_width="match_parent"
+			android:ems="10"
+			android:layout_height="wrap_content"
+			android:text="#ffffff"
+			android:hint="GooseDefaultWhite"
+			android:id="@+id/GooseDefaultWhite"/>
+
+		<TextView
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:text="GooseDefaultOrange:"/>
+
+		<EditText
+			android:layout_width="match_parent"
+			android:ems="10"
+			android:layout_height="wrap_content"
+			android:hint="GooseDefaultOrange"
+			android:text="#ffa500"
+			android:id="@+id/GooseDefaultOrange"/>
+
+		<TextView
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:text="GooseDefaultOutline:"/>
+
+		<EditText
+			android:layout_width="match_parent"
+			android:ems="10"
+			android:layout_height="wrap_content"
+			android:hint="GooseDefaultOutline"
+			android:text="#d3d3d3"
+			android:id="@+id/GooseDefaultOutline"/>
+
+		<TextView
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:text="MinWanderingTimeSeconds:"/>
+
+		<EditText
+			android:layout_width="match_parent"
+			android:ems="10"
+			android:layout_height="wrap_content"
+			android:hint="MinWanderingTimeSeconds"
+			android:text="20"
+			android:id="@+id/MinWanderingTimeSeconds"/>
+
+		<TextView
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:text="MaxWanderingTimeSeconds:"/>
+
+		<EditText
+			android:layout_width="match_parent"
+			android:ems="10"
+			android:layout_height="wrap_content"
+			android:hint="MaxWanderingTimeSeconds"
+			android:text="40"
+			android:id="@+id/MaxWanderingTimeSeconds"/>
+
+		<TextView
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:text="FirstWanderTimeSeconds:"/>
+
+		<EditText
+			android:layout_width="match_parent"
+			android:ems="10"
+			android:layout_height="wrap_content"
+			android:hint="FirstWanderTimeSeconds"
+			android:text="20"
+			android:id="@+id/FirstWanderTimeSeconds"/>
+
+	</LinearLayout>
+
+</ScrollView>
+

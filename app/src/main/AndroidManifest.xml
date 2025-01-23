@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme"
+		android:resizeableActivity="true"
+		android:name=".GlobalApplication">
+        <activity
+            android:name=".MainActivity"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".GlobalApplication$CrashActivity"/>
+		<!--一像素设置 取消多任务栏显示，taskAffinity，主题透明-->
+        <activity
+            android:name=".onePx.OnePxActivity"
+            android:excludeFromRecents="true"
+            android:taskAffinity="com.keep.live"
+            android:theme="@style/KeepTheme"
+		/>
+
+
+        <!--前台服务-->
+        <service android:name=".service.ForegroundService"/>
+        <!--前台的内部服务-->
+        <service android:name=".service.ForegroundService$InnerService"/>
+
+        <service android:name=".service.LocalService"/>
+        <service
+            android:name=".service.RemoteService"
+            android:process=":remote"
+		/>
+
+
+        <!-- https://github.com/fanqieVip/keeplive-->
+        <service android:name="com.fanjun.keeplive.service.JobHandlerService"
+			android:permission="android.permission.BIND_JOB_SERVICE"/>
+        <service android:name="com.fanjun.keeplive.service.HideForegroundService"/>
+        <service android:name="com.fanjun.keeplive.service.LocalService"/>
+        <service android:name="com.fanjun.keeplive.service.RemoteService"/>
+
+        <activity android:name="com.fanjun.keeplive.activity.OnePixelActivity"/>
+        <receiver android:name="com.fanjun.keeplive.receiver.NotificationClickReceiver"/>
+        <receiver android:name="com.fanjun.keeplive.receiver.OnepxReceiver"/>
+    </application>
+	<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+	<uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+	<uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <uses-permission android:name="android.permission.SYSTEM_OVERLAY_WINDOW" />
+	<uses-permission android:name="android.permission.FOREGROUND_SERVICE"/>
+</manifest>
