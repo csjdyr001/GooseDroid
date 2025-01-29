@@ -8,6 +8,7 @@ import android.content.*;
 import android.content.res.*;
 import android.media.*;
 import android.util.*;
+import com.cfks.goosedroid.GooseDesktop.Sound;
 import java.io.*;
 import java.util.*;
 import jiesheng.*;
@@ -19,11 +20,12 @@ public class Sound {
     private static MediaPlayer environmentSoundsPlayer;
     private static MediaPlayer[] patSoundPool;
     private static Context context;
+    private static boolean SilenceSounds = false;
 
     // 初始化方法
-    public static void Init(Context appContext) {
+    public static void Init(Context appContext,boolean SilenceSounds) {
         context = appContext;
-
+        Sound.SilenceSounds = SilenceSounds;
         // 初始化 honkBiteSoundPlayer
         honkBiteSoundPlayer = createMediaPlayerFromAssets("Sound/NotEmbedded/Honk1.mp3");
 
@@ -55,7 +57,7 @@ public class Sound {
     public static void PlayPat() {
         int num = new Random().nextInt(patSoundPool.length);
         MediaPlayer soundPlayer = patSoundPool[num];
-        if (soundPlayer != null) {
+        if (soundPlayer != null && !SilenceSounds) {
             soundPlayer.seekTo(0);
             soundPlayer.start();
         }
@@ -69,7 +71,7 @@ public class Sound {
             honkBiteSoundPlayer.release();
         }
         honkBiteSoundPlayer = createMediaPlayerFromAssets("Sound/NotEmbedded/Honk" + (num + 1) + ".mp3");
-        if (honkBiteSoundPlayer != null) {
+        if (honkBiteSoundPlayer != null && !SilenceSounds) {
             setVolume(honkBiteSoundPlayer, 0.8f);
             honkBiteSoundPlayer.start();
         }
@@ -82,7 +84,7 @@ public class Sound {
             honkBiteSoundPlayer.release();
         }
         honkBiteSoundPlayer = createMediaPlayerFromAssets("Sound/NotEmbedded/BITE.mp3");
-        if (honkBiteSoundPlayer != null) {
+        if (honkBiteSoundPlayer != null && !SilenceSounds) {
             setVolume(honkBiteSoundPlayer, 0.07f);
             honkBiteSoundPlayer.start();
         }
@@ -90,7 +92,7 @@ public class Sound {
 
     // 播放 MudSquith 声音
     public static void PlayMudSquith() {
-        if (environmentSoundsPlayer != null) {
+        if (environmentSoundsPlayer != null && !SilenceSounds) {
             environmentSoundsPlayer.seekTo(0);
             environmentSoundsPlayer.start();
         }

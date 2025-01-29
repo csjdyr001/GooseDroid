@@ -19,14 +19,14 @@ public class TheGoose {
 	private static Canvas canvas;
 	private static ConfigureActivity ca;
 	private static Context ctx;
-
+    
     public static void Init(Context ctx,Canvas canvas,ConfigureActivity ca) {
 		TheGoose.canvas = canvas;
 		TheGoose.ctx = ctx;
 		TheGoose.ca = ca;
 		TheGoose.position = new Vector2(TheGoose.canvas.getWidth() / 2,TheGoose.canvas.getHeight() / 2);//new Vector2(-20f, 120f);
 		TheGoose.targetPos = new Vector2(100f, 150f);
-		Sound.Init(ctx);
+		Sound.Init(ctx,MainActivity.string2boolean(TheGoose.ca.getIniKey("SilenceSounds")));
 		if(!MainActivity.string2boolean(TheGoose.ca.getIniKey("AttackRandomly"))){
 			int num = Arrays.asList(TheGoose.gooseTaskWeightedList).indexOf(TheGoose.GooseTask.CollectWindow_Meme);
 			// 获取 `TheGoose.taskPickerDeck.indices` 中的索引

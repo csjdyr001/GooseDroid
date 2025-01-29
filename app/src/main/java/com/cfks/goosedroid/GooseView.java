@@ -18,7 +18,7 @@ public class GooseView extends View
 	private boolean canvasInit = false;
 	private Handler handler;
 	
-    public GooseView(Context context,ConfigureActivity ca) {
+    public GooseView(Context context,ConfigureActivity ca,int frameRefreshRate) {
         super(context);
 		this.ctx = context;
 		this.ca = ca;
@@ -27,9 +27,13 @@ public class GooseView extends View
 			@Override
 			public void run(){
 				postInvalidate();
-				handler.postDelayed(this,1);
+				handler.postDelayed(this,frameRefreshRate);
 			}
-		},1);
+		},frameRefreshRate);
+    }
+    
+    public GooseView(Context context,ConfigureActivity ca) {
+	    this(context,ca,1);
     }
 
     @Override
