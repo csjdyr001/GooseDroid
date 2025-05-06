@@ -5,3 +5,5 @@ I use the AI convert [https://github.com/arkangel-dev/desktop-goose-source](http
 
 # AppPreview
 [Check it out on bilibili](https://www.bilibili.com/video/BV1aBwce9E2c/)
+
+[Check it out on YouTube](https://youtu.be/wPkmbBTZKfQ?si=QN6ilgISKMiP9yCr)
