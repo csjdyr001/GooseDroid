@@ -51,17 +51,6 @@ public class MainActivity extends Activity
 		FirstWanderTimeSeconds = findViewById(R.id.FirstWanderTimeSeconds);
 		
 		权限申请1 = new 权限申请(this);
-		if (权限申请1.是否缺少权限(权限申请1.取应用所有权限())) {
-			// Do not have permissions, request them now
-			权限申请1.申请所有权限(new PermissionHelper.PermissionResultCallback(){
-				@Override
-				public void onPermissionResult(boolean allGranted) {
-					配置文件路径 = 存储卡操作.取存储卡路径() + "/GooseDroid/config.ini";
-				}
-			});
-		}else{
-			读入配置文件();
-		}
 		读入配置文件();
 		GooseDroid.setOnCheckedChangeListener(new Switch.OnCheckedChangeListener(){
 			@Override
@@ -70,11 +59,11 @@ public class MainActivity extends Activity
 				if(是否开启){
 					if(!权限申请1.是否有悬浮窗权限()){
 						GooseDroid.setChecked(false);
-						应用操作.弹出提示(MainActivity.this,"请开启悬浮窗权限");
+						应用操作.弹出提示(MainActivity.this,"Please enable the floating window permission.");
 						权限申请1.申请悬浮窗权限();
 					}else{
 						//定义前台服务的默认样式。即标题、描述和图标
-						ForegroundNotification foregroundNotification = new ForegroundNotification("GooseDroid","运行中…", R.mipmap.ic_launcher,1);
+						ForegroundNotification foregroundNotification = new ForegroundNotification("GooseDroid","Running...", R.mipmap.ic_launcher,1);
 						//启动保活服务
 						KeepLive.INSTANCE.startWork(getApplication(),foregroundNotification);
 						//KeepLive.INSTANCE.startIgnoreBattery(this,foregroundNotification);
@@ -99,24 +88,27 @@ public class MainActivity extends Activity
 						wmlay1.width = 系统操作.取屏幕宽度(MainActivity.this);
 						wmlay1.height = 系统操作.取屏幕高度(MainActivity.this);
 						wm1.addView(gooseView, wmlay1);
-						应用操作.弹出提示(MainActivity.this,"GooseDroid开启成功");
+						应用操作.弹出提示(MainActivity.this,"GooseDroid is enabled successfully!");
 					}
 				}else{
 					wm1.removeView(gooseView);
 					gooseView = null;
 					KeepLive.INSTANCE.stopWork(getApplication());
-					应用操作.弹出提示(MainActivity.this,"GooseDroid关闭成功");
+					应用操作.弹出提示(MainActivity.this,"GooseDroid shutdown successfully!");
 				}
 			}catch(Exception e){
 				e.printStackTrace();
-				应用操作.信息框(MainActivity.this,MainActivity.class.getName() + "-异常",e.toString());
+				errorAlert(e);
 			}
 			}
 		});
     }
+    private void errorAlert(Exception e){
+    	应用操作.信息框(MainActivity.this,MainActivity.class.getName() + "-Error",e.toString());
+    }
 	private void 读入配置文件(){
 		try{
-			配置文件路径 = 存储卡操作.取存储卡路径() + "/GooseDroid/config.ini";
+			配置文件路径 = 存储卡操作.取私有目录路径(this) + "/config.ini";
 			if(!文件操作.文件是否存在(配置文件路径)){
 				文件操作.写出资源文件(this,"config.ini",配置文件路径);
 			}
@@ -133,18 +125,12 @@ public class MainActivity extends Activity
 			设置文本框内容(MinWanderingTimeSeconds,ca.getIniKey("MinWanderingTimeSeconds"));
 			设置文本框内容(MaxWanderingTimeSeconds,ca.getIniKey("MaxWanderingTimeSeconds"));
 			设置文本框内容(FirstWanderTimeSeconds,ca.getIniKey("FirstWanderTimeSeconds"));
-			应用操作.弹出提示(MainActivity.this,"读入配置文件");
+			应用操作.弹出提示(MainActivity.this,"Reading the configuration file successfully.");
 		}catch(Exception e){
 			e.printStackTrace();
-			应用操作.信息框(this,MainActivity.class.getName() + "-异常",e.toString());
+			errorAlert(e);
 		}
 	}
-		@Override
-		public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
-				super.onRequestPermissionsResult(requestCode, permissions, grantResults);
-				// Forward results to EasyPermissions
-				配置文件路径 = 存储卡操作.取存储卡路径() + "/GooseDroid/config.ini";
-			}
 	
 	public static boolean string2boolean(String str){
 		return Boolean.parseBoolean(str.toLowerCase());
@@ -168,6 +154,7 @@ public class MainActivity extends Activity
 		menu.add(1,1,1,"Config File Path");
 		menu.add(1,2,2,"Reset To Default Config");
 		menu.add(1,3,3,"Save Config");
+		menu.add(1,4,4,"Edit Config File");
 		return true;
 	}
 	private void reStartActivity() {
@@ -200,7 +187,7 @@ public class MainActivity extends Activity
 					ca.saveFiletoSD(配置文件路径,prop);
 				}catch(Exception e){
 					e.printStackTrace();
-					应用操作.信息框(this,MainActivity.class.getName() + "-异常",e.toString());
+					errorAlert(e);
 				}
 				应用操作.弹出提示(this,"Save successfully!");
 				break;

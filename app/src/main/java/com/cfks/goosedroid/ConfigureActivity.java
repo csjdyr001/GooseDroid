@@ -24,7 +24,7 @@ public class ConfigureActivity
      */
     public void saveFiletoSD(String filename,Properties properties)throws Exception{
         //if条件判定SD卡是否存在并具有读写权限
-        if (Environment.getExternalStorageState().equals(Environment.MEDIA_MOUNTED)){
+        //if (Environment.getExternalStorageState().equals(Environment.MEDIA_MOUNTED)){
             //filename=Environment.getExternalStorageDirectory().getCanonicalPath()+"/"+filename;
             //FileOutputStream()里面直接添加filename会覆盖原来的文件数据
             FileOutputStream fileOutputStream=new FileOutputStream(filename);
@@ -36,24 +36,28 @@ public class ConfigureActivity
             }
 
             fileOutputStream.close();
+            /*
         }else {
             Toast.makeText(context,"写入错误",Toast.LENGTH_SHORT).show();
         }
+        */
     }
 
     /**
      * 读取文件
      * */
     public void readFromSD(String filename)throws Exception{
-        if (Environment.getExternalStorageState().equals(Environment.MEDIA_MOUNTED)) {
+        //if (Environment.getExternalStorageState().equals(Environment.MEDIA_MOUNTED)) {
             properties = new Properties();
             //filename=Environment.getExternalStorageDirectory().getCanonicalPath()+"/"+filename;
             FileInputStream fileInputStream=new FileInputStream(filename);
             properties.load(fileInputStream);
             fileInputStream.close();
+            /*
         }else {
             Toast.makeText(context,"读取错误",Toast.LENGTH_SHORT).show();
         }
+        */
     }
     public String getIniKey(String key) {
         if (properties.containsKey(key) == false) {

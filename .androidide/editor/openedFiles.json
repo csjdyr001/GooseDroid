@@ -4,44 +4,29 @@
       "file": "/storage/emulated/0/AndroidIDEProjects/GooseDroid/app/src/main/java/com/cfks/goosedroid/MainActivity.java",
       "selection": {
         "end": {
-          "column": 42,
-          "index": 7141,
-          "line": 191
+          "column": 28,
+          "index": 4129,
+          "line": 111
         },
         "start": {
-          "column": 42,
-          "index": 7141,
-          "line": 191
+          "column": 28,
+          "index": 4129,
+          "line": 111
         }
       }
     },
     {
-      "file": "/storage/emulated/0/AndroidIDEProjects/GooseDroid/app/src/main/java/com/cfks/goosedroid/GooseView.java",
+      "file": "/storage/emulated/0/AndroidIDEProjects/GooseDroid/app/src/main/AndroidManifest.xml",
       "selection": {
         "end": {
-          "column": 24,
-          "index": 845,
-          "line": 35
+          "column": 6,
+          "index": 2063,
+          "line": 52
         },
         "start": {
-          "column": 24,
-          "index": 845,
-          "line": 35
-        }
-      }
-    },
-    {
-      "file": "/storage/emulated/0/AndroidIDEProjects/GooseDroid/app/src/main/java/com/cfks/goosedroid/SamEngine/Vector2.java",
-      "selection": {
-        "end": {
-          "column": 0,
-          "index": 0,
-          "line": 0
-        },
-        "start": {
-          "column": 0,
-          "index": 0,
-          "line": 0
+          "column": 6,
+          "index": 2063,
+          "line": 52
         }
       }
     },
@@ -49,32 +34,32 @@
       "file": "/storage/emulated/0/AndroidIDEProjects/GooseDroid/app/src/main/java/com/cfks/goosedroid/GooseDesktop/TheGoose.java",
       "selection": {
         "end": {
-          "column": 30,
-          "index": 8267,
-          "line": 195
+          "column": 2,
+          "index": 4339,
+          "line": 90
         },
         "start": {
-          "column": 30,
-          "index": 8267,
-          "line": 195
+          "column": 2,
+          "index": 4339,
+          "line": 90
         }
       }
     },
     {
-      "file": "/storage/emulated/0/AndroidIDEProjects/GooseDroid/app/src/main/java/com/cfks/goosedroid/GooseDesktop/Sound.java",
+      "file": "/storage/emulated/0/AndroidIDEProjects/GooseDroid/app/src/main/java/com/cfks/goosedroid/GooseView.java",
       "selection": {
         "end": {
-          "column": 9,
-          "index": 2670,
-          "line": 84
+          "column": 0,
+          "index": 0,
+          "line": 0
         },
         "start": {
-          "column": 9,
-          "index": 2670,
-          "line": 84
+          "column": 0,
+          "index": 0,
+          "line": 0
         }
       }
     }
   ],
-  "selectedFile": "/storage/emulated/0/AndroidIDEProjects/GooseDroid/app/src/main/java/com/cfks/goosedroid/GooseDesktop/TheGoose.java"
+  "selectedFile": "/storage/emulated/0/AndroidIDEProjects/GooseDroid/app/src/main/java/com/cfks/goosedroid/MainActivity.java"
 }

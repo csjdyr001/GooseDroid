@@ -50,8 +50,8 @@
         <receiver android:name="com.fanjun.keeplive.receiver.NotificationClickReceiver"/>
         <receiver android:name="com.fanjun.keeplive.receiver.OnepxReceiver"/>
     </application>
-	<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-	<uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+	<!-- <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+	<uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" /> -->
 	<uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
     <uses-permission android:name="android.permission.SYSTEM_OVERLAY_WINDOW" />
 	<uses-permission android:name="android.permission.FOREGROUND_SERVICE"/>
