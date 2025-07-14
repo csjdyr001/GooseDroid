@@ -1,17 +1,17 @@
 {
   "allFiles": [
     {
-      "file": "/storage/emulated/0/AndroidIDEProjects/GooseDroid/app/src/main/java/com/cfks/goosedroid/GlobalApplication.java",
+      "file": "/storage/emulated/0/AndroidIDEProjects/GooseDroid/app/src/main/java/com/cfks/goosedroid/GooseDesktop/TheGoose.java",
       "selection": {
         "end": {
-          "column": 38,
-          "index": 313,
-          "line": 11
+          "column": 17,
+          "index": 7925,
+          "line": 159
         },
         "start": {
-          "column": 38,
-          "index": 313,
-          "line": 11
+          "column": 17,
+          "index": 7925,
+          "line": 159
         }
       }
     },
@@ -31,5 +31,5 @@
       }
     }
   ],
-  "selectedFile": "/storage/emulated/0/AndroidIDEProjects/GooseDroid/app/src/main/java/com/cfks/goosedroid/GlobalApplication.java"
+  "selectedFile": "/storage/emulated/0/AndroidIDEProjects/GooseDroid/app/build.gradle"
 }
